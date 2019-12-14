@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    {% if title %}
+    <title>CHIS - {{ title }}</title>
+    {% else %}
+    <title>CHIS</title>
+    {% endif %}
+</head>
+
+<body>
+    <div class="container">
+        <div class="intro_container">
+            <p class="logo">Check the Audience</p>
+           {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

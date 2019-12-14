@@ -1,0 +1,9 @@
+{% extends 'm_layout.html' %}
+{% block content %}
+<form action="">
+    <input type="text" name="username" class="input" placeholder="Enter your name ...">
+    <a href="{{ url_for('index') }}" class="btn btn--join">Join Event</a>
+    <a href="{{ url_for('index') }}" class="btn btn--create">Create Event</a>
+</form>
+
+{% endblock content %}
