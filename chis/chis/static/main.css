@@ -16,7 +16,6 @@ h1,h2,h3,h4,h5,h6,p{
 .container{
     width: 100%;
     max-width: 1170px;
-    height: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -28,17 +27,21 @@ h1,h2,h3,h4,h5,h6,p{
     width: 100%;
     max-width: 510px;
     margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 
 .logo{
     color: #ffffff;
     font-weight: bold;
     font-size: 48px;
     margin-bottom: 40px;
-    text-align: center;
 }
 
 .btn{
@@ -49,7 +52,9 @@ h1,h2,h3,h4,h5,h6,p{
     text-decoration: none;
     background-color: #333333;
     color: #ffffff;
-    
+    border: 0;
+    outline: none;
+    cursor: pointer;    
 }
 
 .btn--join{
@@ -60,6 +65,7 @@ h1,h2,h3,h4,h5,h6,p{
 
 .btn--create{
     padding: 22px 42px;
+
 }
 
 .btn:hover{

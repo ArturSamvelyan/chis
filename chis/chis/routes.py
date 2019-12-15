@@ -1,16 +1,26 @@
 from flask import render_template, request, url_for, flash, redirect, abort
 from chis import app, socketio
+from chis.forms import UsernameForm, RoomNameForm
 from flask_socketio import send
+from random import random
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-	return render_template('index.html')
-
-@app.route('/', methods=['POST'])
-def index_post():
-	text = request.form['text']
-	processed_text = text.upper()
-	return processed_text
+	form = UsernameForm()
+	if form.validate_on_submit():
+		print('validate')
+		#user = User(username=form.username.data)
+		#db.session.add(user)
+		#db.session.commit()
+		if form.submit_join.data:
+			return redirect('room')
+		if form.submit_create.data:
+			print('blyat')
+			return redirect('room/suka')
+	else:
+		return redirect('room/pity')
+	return render_template('index.html', form=form)
+	#return render_template('index.html', form=form)
 
 @app.route('/join')
 def enter_token():
