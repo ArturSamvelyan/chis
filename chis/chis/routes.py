@@ -27,15 +27,16 @@ def join():
 	return render_template('join.html', form=form)
 
 
-@app.route('/room')
-def room():
+@app.route('/room/<name>')
+def room(name):
 	return render_template('room.html') 
-
+'''
 @app.route('/room/<name>')
 def room_n(name):
 	if not name:
 		abort(404)
 	return '<h1> Welcome to %s room!</h1>' % name
+'''
 
 @socketio.on('message')
 def handleMessage(msg):

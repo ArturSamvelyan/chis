@@ -1,70 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Room</title>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main-lobby.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lobby Page</title>
 </head>
+
 <body>
-<script type="text/javascript">
-$(document).ready(function() {
-	var socket = io.connect('http://127.0.0.1:5000');
-	socket.on('connect', function() {
-		socket.send('User has connected!');
-	});
-	socket.on('message', function(msg) {
-		$("#messages").append('<li>'+msg+'</li>');
-		console.log('Received message');
-	});
-	$('#sendbutton').on('click', function() {
-		socket.send($('#myMessage').val());
-		$('#myMessage').val('');
-	});
-});
-</script>
-<ul id="messages"></ul>
-<input type="text" id="myMessage">
-<button id="sendbutton">Send</button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 side-menu">
+                <p class="logo">Check in Service</p>
+                <div class="users">
+                    <p class="admin">Admin</p>
+                    <div class="users_count">
+                        <input type="text" class="input" placeholder="Search the paricipante">
+                        <p class="users_number">3 attendees</p>
+                    </div>
+                    <ul>
+                        <li>Slava Kulik</li>
+                        <li>Arturka</li>
+                        <li>Salamon</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 info-field">
+                <p class="event_name">Event name</p>
+                <div class="text_area">
+                    <p class="inputted_text">Lecture theme: “Learning ....”
+                                  Today we will consider the construction algorithm and in the end we will write a test.</p>
+                </div>
+                <a href="#" class="btn_exit">Exit event</a>
+            </div>
+        </div>
+
+    </div>
 </body>
-</html><!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <title>Flask_Chat_App</title>
-  </head>
-  <body>
 
-    <h3 style='color: #ccc;font-size: 30px;'>No message yet..</h3>
-    <div class="message_holder"></div>
-
-    <form action="" method="POST">
-      <input type="text" class="username" placeholder="User Name"/>
-      <input type="text" class="message" placeholder="Messages"/>
-      <input type="submit"/>
-    </form>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
-    <script type="text/javascript">
-      var socket = io.connect('http://' + document.domain + ':' + location.port);
-      socket.on( 'connect', function() {
-        socket.emit( 'my event', {
-          data: 'User Connected'
-        } )
-        var form = $( 'form' ).on( 'submit', function( e ) {
-          e.preventDefault()
-          let user_name = $( 'input.username' ).val()
-          let user_input = $( 'input.message' ).val()
-          socket.emit( 'my event', {
-            user_name : user_name,
-            message : user_input
-          } )
-          $( 'input.message' ).val( '' ).focus()
-        } )
-      } )
-      socket.on( 'my response', function( msg ) {
-        console.log( msg )
-        if( typeof msg.user_name !== 'undefined' ) {
-          $( 'h3' ).remove()
-          $( 'div.message_holder' ).append( '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>' )
-        }
-      })
+</html>

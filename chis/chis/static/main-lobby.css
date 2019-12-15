@@ -1,0 +1,121 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #00C6DB;
+}
+
+h1,h2,h3,h4{
+    margin: 0;
+    font-weight: 700;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.container-fluid{
+    width: 100%;
+    max-width: 1920px;
+    height: 1000px;
+    margin: 0 auto;
+}
+
+.side-menu{
+    height:1000px;
+    background-color: #00C6DB;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.info-field{
+    height: 1000px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 30px 0px 35px;
+    text-align: center;
+}
+.users{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.admin{
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #000000;
+}
+
+.users_count{
+    display: flex;
+    flex-direction: row;
+}
+
+.users_number{
+    color: #656A6D;
+    margin-left: 40px;
+    padding-top: 8px;
+}
+
+.input{
+    text-align: center;
+    padding: 6px 0px;
+    font-size: 13px;
+    font-family: Montserrat;
+    max-width: 206px;
+    border: 3px solid #008B99;
+    margin-bottom: 20px;
+}
+
+.event_name{
+    color: #000000;
+    font-weight: bold;
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.text_area{
+    margin: 30px 50px 0px 50px;
+    width: 100%;
+    max-width: 95%;
+    height: 100%;
+    max-height: 200px;
+    border: 3px solid #008B99;
+}
+.inputted_text{
+    color: #656A6D;
+    widows: 100%;
+    max-width: 95%;
+    padding: 35px 35px;
+}
+
+.btn_exit{
+    display: inline-block;
+    padding: 16px 50px;
+    margin: 30px 50px;
+    width: 200px;
+    vertical-align: top;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.btn_exit:hover{
+    text-decoration: none;
+    background-color: black;
+    color: #fff;
+}
