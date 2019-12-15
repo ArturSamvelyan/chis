@@ -13,19 +13,19 @@ def index():
 		#db.session.add(user)
 		#db.session.commit()
 		if form.submit_join.data:
-			return redirect('room')
+			return redirect('join')
 		if form.submit_create.data:
 			print('blyat')
 			return redirect('room/suka')
-	else:
-		return redirect('room/pity')
 	return render_template('index.html', form=form)
-	#return render_template('index.html', form=form)
 
-@app.route('/join')
-def enter_token():
-	#text = request.form['username']
-    pass
+@app.route('/join', methods=['GET', 'POST'])
+def join():
+	form = RoomNameForm()
+	if form.validate_on_submit():
+		return redirect('room/%s'%form.name.data)
+	return render_template('join.html', form=form)
+
 
 @app.route('/room')
 def room():

@@ -2,8 +2,7 @@
 {% block content %}
 <form method="POST" action="" class="container">
     {{ form.hidden_tag() }}
-    {{ form.username(class="input")}}
-    {{ form.submit_join(class="btn btn--join") }}
-    {{ form.submit_create(class="btn btn--create") }}
+    {{ form.name(class="input") }}
+    {{ form.submit(class="btn btn--join") }}
 </form>
 {% endblock content %}
